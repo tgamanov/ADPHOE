@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form with validation</title>
+    <meta charset="utf-8">
+    <style>
+        .contact-form {
+            width: 300px;
+            font-size: 13px;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .row textarea,
+        .row input {
+            width: 300px;
+            padding: 10px;
+        }
+
+        .row .submit {
+            width: 50%;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form id="contact_form" class="contact-form">
+    <div class="row">
+        <input type="text" name="number" data-rule-number="true" data-msg-required="Digits only"
+               placeholder="Only digits" data-rule-required="true">
+    </div>
+    <div class="row">
+        <input type="text" name="email" data-rule-email="true" data-msg-required="Invalid email"
+               placeholder="example@example.com" data-rule-required="true">
+    </div>
+    <div class="row">
+        <textarea name="required-sassy" data-rule-maxlength="10" data-msg-required="Max 10 symbols"
+                  placeholder="Max 10 symbol" data-rule-required="true"></textarea>
+    </div>
+    <div class="row">
+        <input type="text" name="anotherNumber" data-rule-number="true" data-msg-required="Digits only"
+               placeholder="Only digits" data-rule-required="true">
+    </div>
+    <div class="row">
+        <input class="submit" type="submit" value="Validate!">
+    </div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+
+<script>
+    $("#contact_form").validate();
+</script>
+</body>
+</html>
